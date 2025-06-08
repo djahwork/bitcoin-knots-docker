@@ -32,7 +32,7 @@ Follow the steps below to build and run the Bitcoin Knots container:
 ```bash
 git clone https://github.com/djahwork/bitcoin-knots-docker.git
 cd bitcoin-knots-docker
-
+```
 
 ### ✅ Step 2: Configure the bitcoin.conf File
 
