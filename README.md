@@ -32,3 +32,46 @@ Follow the steps below to build and run the Bitcoin Knots container:
 ```bash
 git clone https://github.com/djahwork/bitcoin-knots-docker.git
 cd bitcoin-knots-docker
+
+
+### ✅ Step 2: Configure the bitcoin.conf File
+
+# bitcoin.conf (example config for testnet)
+
+# Enable testnet mode
+testnet=1
+
+# Enable RPC server
+server=1
+
+# RPC login credentials
+rpcuser=yourusername
+rpcpassword=yoursecurepassword
+
+# Allow RPC connections from localhost only
+rpcallowip=127.0.0.1
+
+# Optional: enable transaction and block indexing
+txindex=1
+blockfilterindex=1
+
+### ✅ Step 3: Build the Docker Image
+
+```bash
+docker build -t bitcoin-knots .
+
+
+### ✅ Step 4: Run the Container
+
+```bash
+docker run -d \
+  -p 18332:18332 \
+  -p 18333:18333 \
+  --name bitcoin-knots \
+  bitcoin-knots
+
+
+### ✅ Step 5: See the logs
+
+```bash
+docker logs bitcoin-knots
