@@ -36,6 +36,7 @@ cd bitcoin-knots-docker
 
 ### ✅ Step 2: Configure the bitcoin.conf File
 
+```bash
 # bitcoin.conf (example config for testnet)
 
 # Enable testnet mode
@@ -54,12 +55,13 @@ rpcallowip=127.0.0.1
 # Optional: enable transaction and block indexing
 txindex=1
 blockfilterindex=1
+```
 
 ### ✅ Step 3: Build the Docker Image
 
 ```bash
 docker build -t bitcoin-knots .
-
+```
 
 ### ✅ Step 4: Run the Container
 
@@ -69,9 +71,10 @@ docker run -d \
   -p 18333:18333 \
   --name bitcoin-knots \
   bitcoin-knots
-
+```
 
 ### ✅ Step 5: See the logs
 
 ```bash
 docker logs bitcoin-knots
+```
